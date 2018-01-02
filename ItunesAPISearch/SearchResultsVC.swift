@@ -12,6 +12,7 @@ import PromiseKit
 
 class SearchResultsVC: UITableViewController {
     
+    let longverylongverylongverylongverylobngverylongverylong = "n"
     let searchController = UISearchController(searchResultsController: nil)
     let dataSource = SearchResultsDataSource()
     let client = ItunesAPIClient()
