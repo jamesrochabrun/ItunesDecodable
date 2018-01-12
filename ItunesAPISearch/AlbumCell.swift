@@ -44,7 +44,7 @@ class AlbumCell: UITableViewCell {
         return l
     }()
     
-    weak var delegate: AlbumCellDelegate?
+    var delegate: AlbumCellDelegate?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
