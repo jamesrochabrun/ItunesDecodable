@@ -32,7 +32,7 @@ class SearchResultsVC: UITableViewController {
         definesPresentationContext = true
     }
     
-    func dismissVC() {
+    @objc func dismissVC() {
         self.dismiss(animated: true)
     }
 }

@@ -72,7 +72,7 @@ class PreviewVC: UIViewController {
     }
 
     //MARK - Navigation
-    func dismissVC() {
+    @objc func dismissVC() {
         self.dismiss(animated: true)
     }
 }
@@ -81,7 +81,7 @@ class PreviewVC: UIViewController {
 extension PreviewVC {
     
     /// This is all that we need in the view controller to create the Swipe Tinder card
-    func swipeCard(sender: UIPanGestureRecognizer) {
+    @objc func swipeCard(sender: UIPanGestureRecognizer) {
         
         //protocol here
         let tupleData = sender.swipeView(tinderCard)

@@ -100,7 +100,7 @@ extension AlbumCell {
 //MARK: Delegate method action
 extension AlbumCell {
     
-    func imageTapped() {
+    @objc func imageTapped() {
         delegate?.openAlbumArtwork()
     }
 }
