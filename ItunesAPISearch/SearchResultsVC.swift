@@ -12,16 +12,30 @@ import PromiseKit
 
 class SearchResultsVC: UITableViewController {
     
-    let searchController = UISearchController(searchResultsController: nil)
-    let dataSource = SearchResultsDataSource()
-    let client = ItunesAPIClient()
+    // MARK: - Properties
+    private let searchController = UISearchController(searchResultsController: nil)
+    private let dataSource = SearchResultsDataSource()
+    private let client = ItunesAPIClient()
     
+    // MARK: - App Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(SearchResultsVC.dismissVC))
         setUpViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // add store subscribers here
+        self.updateNavigationState()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // unsuscribe here
+    }
+    
+    // MARK: - Set up UI
     private func setUpViews() {
         tableView.register(UITableViewCell.self)
         tableView.dataSource = dataSource
@@ -32,8 +46,13 @@ class SearchResultsVC: UITableViewController {
         definesPresentationContext = true
     }
     
+    // MARK: - Navigation
     @objc func dismissVC() {
         self.dismiss(animated: true)
+    }
+    
+    private func updateNavigationState() {
+        store.dispatch(RoutingAction(destination: .search, modally: nil))
     }
 }
 
@@ -80,14 +99,15 @@ extension SearchResultsVC {
     
     private func update(artist: Artist, with albumsResult: AlbumsResult?)  {
         guard let albumsResult = albumsResult else { return  }
-        let albumListVC = AlbumListVC()
-        if let results = albumsResult.results {
-            let albums = results.flatMap { return $0 }
-            artist.albums = albums
-            albumListVC.artist = artist
-            self.navigationController?.pushViewController(albumListVC, animated: true)
-            
-        }
+        store.dispatch(RoutingAction(destination: .albumList, modally: false))
+        /// HERE GOES A NEW STATE
+//        let albumListVC = AlbumListVC()
+//        if let results = albumsResult.results {
+//            let albums = results.flatMap { return $0 }
+//            artist.albums = albums
+//            albumListVC.artist = artist
+//            self.navigationController?.pushViewController(albumListVC, animated: true)
+//        }
     }
 }
 

@@ -45,8 +45,9 @@ final class AppRouter {
     }
     
     fileprivate func showViewController<T: UIViewController>(_ controller: T.Type, animated: Bool, modally: Bool? = false) {
-        
         let vc = controller.init()
+        
+        /// this is the most important to avoid weird states on the navigation
         let newViewControllerType = type(of: vc)
         if let currentVc = navigationController.topViewController {
             let currentViewControllerType = type(of: currentVc)
@@ -54,11 +55,13 @@ final class AppRouter {
                 return
             }
         }
-        if let modally = modally, modally {
-            navigationController.present(vc, animated: animated)
-        } else {
-            navigationController.pushViewController(vc, animated: animated)
-        }
+        navigationController.pushViewController(vc, animated: animated)
+        /// Fix this FOR MODAL controllers
+//        if let modally = modally, modally {
+//            navigationController.present(vc, animated: animated)
+//        } else {
+//            navigationController.pushViewController(vc, animated: animated)
+//        }
     }
 }
 

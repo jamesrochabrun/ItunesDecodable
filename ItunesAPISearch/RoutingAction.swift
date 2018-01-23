@@ -10,5 +10,5 @@ import ReSwift
 
 struct RoutingAction: Action {
     let destination: RoutingDestination
-    let modally: Bool
+    let modally: Bool?
 }

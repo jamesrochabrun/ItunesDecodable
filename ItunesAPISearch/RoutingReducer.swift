@@ -13,7 +13,7 @@ func routingReducer(action: Action, state: RoutingState?) -> RoutingState {
     switch action {
     case let routingAction as RoutingAction:
         state.navigationState = routingAction.destination
-        state.modally = routingAction.modally
+        state.modally = routingAction.modally ?? false
     default: break
     }
     return state
