@@ -53,9 +53,10 @@ class WelcomeVC: UIViewController {
     
     @objc private func displaySearchResultsVC() {
         
-        let searchResultsVC = SearchResultsVC()
-        let navVC = UINavigationController(rootViewController: searchResultsVC)
-        self.present(navVC, animated: true)
+//        let searchResultsVC = SearchResultsVC()
+//        let navVC = UINavigationController(rootViewController: searchResultsVC)
+//        self.present(navVC, animated: true)
+        store.dispatch(RoutingAction(destination: .search, modally: true))
     }
 }
 

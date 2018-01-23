@@ -12,6 +12,7 @@ import ReSwift
 
 /// Helper enum to hold destination on the app
 enum RoutingDestination {
+    
     case welcome
     case search
     case albumList
@@ -43,7 +44,7 @@ final class AppRouter {
         }
     }
     
-    fileprivate func pushViewController<T: UIViewController>(_ controller: T.Type, animated: Bool) {
+    fileprivate func showViewController<T: UIViewController>(_ controller: T.Type, animated: Bool, modally: Bool? = false) {
         
         let vc = controller.init()
         let newViewControllerType = type(of: vc)
@@ -53,7 +54,11 @@ final class AppRouter {
                 return
             }
         }
-        navigationController.pushViewController(vc, animated: animated)
+        if let modally = modally, modally {
+            navigationController.present(vc, animated: animated)
+        } else {
+            navigationController.pushViewController(vc, animated: animated)
+        }
     }
 }
 
@@ -61,7 +66,7 @@ extension AppRouter: StoreSubscriber {
     
     func newState(state: RoutingState) {
         let shouldAnimate = navigationController.topViewController != nil
-        pushViewController(state.navigationState.destinationVC, animated: shouldAnimate)
+        showViewController(state.navigationState.destinationVC, animated: shouldAnimate, modally: state.modally)
     }
 }
 

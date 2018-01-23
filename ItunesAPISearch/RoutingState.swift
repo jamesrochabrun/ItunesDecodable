@@ -12,8 +12,10 @@ import ReSwift
 struct RoutingState: StateType {
     
     var navigationState: RoutingDestination
+    var modally: Bool
     
     init(navigationState: RoutingDestination = .welcome) {
         self.navigationState = navigationState
+        self.modally = false
     }
 }
