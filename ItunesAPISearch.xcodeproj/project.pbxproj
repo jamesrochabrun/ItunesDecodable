@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09472C7C2016C39700D4231E /* RoutingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09472C7B2016C39700D4231E /* RoutingReducer.swift */; };
+		09472C7E2016C3EA00D4231E /* RoutingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09472C7D2016C3EA00D4231E /* RoutingAction.swift */; };
+		09D6793B2016B1C8003BE83D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D6793A2016B1C8003BE83D /* AppState.swift */; };
+		09D6793D2016B1FE003BE83D /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D6793C2016B1FE003BE83D /* MainReducer.swift */; };
+		09D6793F2016B424003BE83D /* RoutingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D6793E2016B424003BE83D /* RoutingState.swift */; };
+		09D679412016B5E4003BE83D /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D679402016B5E4003BE83D /* AppRouter.swift */; };
 		7B2586591FE08AC900449495 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2586581FE08AC900449495 /* APIClient.swift */; };
 		7B497F2A1EB3AFAC00A00880 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B497F291EB3AFAC00A00880 /* AppDelegate.swift */; };
 		7B497F2C1EB3AFAC00A00880 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B497F2B1EB3AFAC00A00880 /* WelcomeVC.swift */; };
@@ -49,6 +55,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09472C7B2016C39700D4231E /* RoutingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingReducer.swift; sourceTree = "<group>"; };
+		09472C7D2016C3EA00D4231E /* RoutingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingAction.swift; sourceTree = "<group>"; };
+		09D6793A2016B1C8003BE83D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		09D6793C2016B1FE003BE83D /* MainReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
+		09D6793E2016B424003BE83D /* RoutingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingState.swift; sourceTree = "<group>"; };
+		09D679402016B5E4003BE83D /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		13D248124323AAB326458608 /* Pods-ItunesAPISearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItunesAPISearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ItunesAPISearch/Pods-ItunesAPISearch.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2586581FE08AC900449495 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		7B497F261EB3AFAC00A00880 /* ItunesAPISearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesAPISearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +118,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09D679362016AD16003BE83D /* Reswift */ = {
+			isa = PBXGroup;
+			children = (
+				09D679402016B5E4003BE83D /* AppRouter.swift */,
+				09D679392016B1B6003BE83D /* Reducers */,
+				09D679382016B1B1003BE83D /* Actions */,
+				09D679372016B1A8003BE83D /* State */,
+			);
+			name = Reswift;
+			sourceTree = "<group>";
+		};
+		09D679372016B1A8003BE83D /* State */ = {
+			isa = PBXGroup;
+			children = (
+				09D6793A2016B1C8003BE83D /* AppState.swift */,
+				09D6793E2016B424003BE83D /* RoutingState.swift */,
+			);
+			name = State;
+			sourceTree = "<group>";
+		};
+		09D679382016B1B1003BE83D /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				09472C7D2016C3EA00D4231E /* RoutingAction.swift */,
+			);
+			name = Actions;
+			sourceTree = "<group>";
+		};
+		09D679392016B1B6003BE83D /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				09D6793C2016B1FE003BE83D /* MainReducer.swift */,
+				09472C7B2016C39700D4231E /* RoutingReducer.swift */,
+			);
+			name = Reducers;
+			sourceTree = "<group>";
+		};
 		3674D83589F07BC4B8367F29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +185,7 @@
 		7B497F281EB3AFAC00A00880 /* ItunesAPISearch */ = {
 			isa = PBXGroup;
 			children = (
+				09D679362016AD16003BE83D /* Reswift */,
 				7B693FE51FE47AE000D80783 /* UIBuilders */,
 				7BC070B81EB4DEA500090A67 /* Networking */,
 				7B497F561EB3D0B500A00880 /* ViewModels */,
@@ -372,10 +422,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ItunesAPISearch/Pods-ItunesAPISearch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -396,6 +448,8 @@
 				7B693FE71FE47AF700D80783 /* ImageViewFactory.swift in Sources */,
 				7B94BE7E1EB7D648002E5B12 /* PendingOperations.swift in Sources */,
 				7B497F691EB3FEF800A00880 /* ItunesEntity.swift in Sources */,
+				09472C7C2016C39700D4231E /* RoutingReducer.swift in Sources */,
+				09472C7E2016C3EA00D4231E /* RoutingAction.swift in Sources */,
 				7B693FE01FE45FE700D80783 /* PreviewVC.swift in Sources */,
 				7B497F451EB3B6FA00A00880 /* Song.swift in Sources */,
 				7B497F6D1EB4116F00A00880 /* ItunesAttribute.swift in Sources */,
@@ -407,6 +461,7 @@
 				7B497F2A1EB3AFAC00A00880 /* AppDelegate.swift in Sources */,
 				7B2586591FE08AC900449495 /* APIClient.swift in Sources */,
 				7B497F671EB3F03C00A00880 /* Endpoint.swift in Sources */,
+				09D6793F2016B424003BE83D /* RoutingState.swift in Sources */,
 				7B497F4F1EB3C14B00A00880 /* Reusable.swift in Sources */,
 				7B497F511EB3C39300A00880 /* AlbumListVc.swift in Sources */,
 				7B693FE91FE47B9C00D80783 /* LabelFactory.swift in Sources */,
@@ -416,9 +471,12 @@
 				7BC070BC1EB4E06D00090A67 /* ItunesAPIClient.swift in Sources */,
 				7B497F491EB3BD0500A00880 /* SearchResultsVC.swift in Sources */,
 				7B497F601EB3E10300A00880 /* AlbumDetailViewModel.swift in Sources */,
+				09D679412016B5E4003BE83D /* AppRouter.swift in Sources */,
+				09D6793D2016B1FE003BE83D /* MainReducer.swift in Sources */,
 				7B497F411EB3B3F600A00880 /* Genre.swift in Sources */,
 				7B693FEB1FE47C1D00D80783 /* TinderSwipeable.swift in Sources */,
 				7B497F621EB3E39C00A00880 /* SongViewModel.swift in Sources */,
+				09D6793B2016B1C8003BE83D /* AppState.swift in Sources */,
 				7B497F551EB3D03900A00880 /* AlbumListDataSource.swift in Sources */,
 				7B497F431EB3B4BB00A00880 /* Album.swift in Sources */,
 				7B497F4C1EB3C05800A00880 /* SearchResultsDataSource.swift in Sources */,

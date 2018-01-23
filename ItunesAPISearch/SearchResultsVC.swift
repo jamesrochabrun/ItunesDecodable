@@ -86,6 +86,7 @@ extension SearchResultsVC {
             artist.albums = albums
             albumListVC.artist = artist
             self.navigationController?.pushViewController(albumListVC, animated: true)
+            
         }
     }
 }

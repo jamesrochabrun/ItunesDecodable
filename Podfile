@@ -7,6 +7,6 @@ target 'ItunesAPISearch' do
 
   # Pods for ItunesAPISearch
 	pod "PromiseKit", "~> 4.0"
-
+    pod 'ReSwift', '~> 4.0.0'
 
 end
