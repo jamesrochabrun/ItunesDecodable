@@ -13,6 +13,7 @@ import Foundation
 
 //MARK: Itunes enum to help endpoint creation
 enum Itunes {
+
     //this case is just for the search path
     case search(term: String, media: ItunesMedia?)
     case lookUP(id: Int, entity: ItunesEntity?) //this endpoint asks for an id and an optional entity, here we put the protocol type so it can be any entity
@@ -58,5 +59,7 @@ extension Itunes: Endpoint {
         }
         return result
     }
+    
+ 
 }
 

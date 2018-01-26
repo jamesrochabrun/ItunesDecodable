@@ -8,5 +8,9 @@ target 'ItunesAPISearch' do
   # Pods for ItunesAPISearch
 	pod "PromiseKit", "~> 4.0"
 
-
+    target 'ItunesAPISearchTests' do
+        use_frameworks!
+        pod "Nimble"
+        pod "Quick"
+    end
 end

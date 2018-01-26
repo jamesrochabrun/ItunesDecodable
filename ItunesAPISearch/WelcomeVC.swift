@@ -22,21 +22,9 @@ class WelcomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
- 
-        
         //MARK Dummy examples 
-        let se = Itunes.search(term: "rolling stones", media: .music(entity: .musicArtist, attribute: .artistTerm))
-        
-        print(se.request)
-        
-        print("#######################################")
-        
-        let le = Itunes.lookUP(id: 159260351, entity: MusicEntity.album)
-        
-        print(le.request)
-        
     }
-
+    
     private func setUpViews() {
         view.backgroundColor = .white
         view.addSubview(searchButton)
